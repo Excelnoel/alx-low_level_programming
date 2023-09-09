@@ -3,32 +3,30 @@
 /**
  * main - Entry point
  *
- * Description: This program prints all possible different combinations
- *              of two digits in ascending order, separated by ", ".
+ * Description: Print all possible combinations of two digits.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int digit1, digit2, printed = 0;
+	int digit1, digit2;
 
-    for (digit1 = 0; digit1 <= 8; digit1++)
-    {
-        for (digit2 = digit1 + 1; digit2 <= 9; digit2++)
-        {
-            if (printed > 0)
-            {
-                putchar(',');
-                putchar(' ');
-            }
+	for (digit1 = 0; digit1 <= 8; digit1++)
+	{
+		for (digit2 = digit1 + 1; digit2 <= 9; digit2++)
+		{
+			putchar(digit1 + '0');
+			putchar(digit2 + '0');
 
-            putchar(digit1 + '0');
-            putchar(digit2 + '0');
-            printed++;
-        }
-    }
+			if (digit1 != 8 || digit2 != 9)
+			{
+				putchar(',');
+				putchar(' ');
+			}
+		}
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return (0);
+	return (0);
 }
