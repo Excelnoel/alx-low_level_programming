@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * This program generates a random number and checks
+ * This program generates a random number and checks.
  *  
  * Return: Always 0 (Success)
  */
@@ -15,7 +15,6 @@ int main(void)
 
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
-
 	printf("%d is", n);
 
 	if (n > 0)
