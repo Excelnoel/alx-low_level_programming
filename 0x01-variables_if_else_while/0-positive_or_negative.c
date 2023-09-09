@@ -3,11 +3,11 @@
 #include <time.h>
 
 int main(void) {
-    srand(time(NULL)); // Seed the random number generator with the current time
     int n;
-
-    n = rand() % (2 * RAND_MAX) - RAND_MAX; // Generate a random number between -RAND_MAX and RAND_MAX
-
+    
+    srand((unsigned)time(NULL)); // Seed the random number generator with the current time
+    n = rand() % (2 * RAND_MAX + 1) - RAND_MAX; // Generate a random number between -RAND_MAX and RAND_MAX
+    
     printf("The number %d is ", n);
 
     if (n > 0) {
