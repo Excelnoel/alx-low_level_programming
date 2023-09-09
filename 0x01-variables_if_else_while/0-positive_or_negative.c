@@ -2,10 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 
-int main() {
+int main(void) {
     srand(time(NULL)); // Seed the random number generator with the current time
-    int n = rand() % (2 * RAND_MAX) - RAND_MAX; // Generate a random number between -RAND_MAX and RAND_MAX
-    
+    int n;
+
+    n = rand() % (2 * RAND_MAX) - RAND_MAX; // Generate a random number between -RAND_MAX and RAND_MAX
+
     printf("The number %d is ", n);
 
     if (n > 0) {
