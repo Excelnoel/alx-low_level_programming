@@ -3,27 +3,27 @@
 /**
  * main - Entry point
  *
- * Description: This program prints all possible combinations of
- * single-digit numbers in ascending order, separated by ", ".
+ * Description: This program prints all single-digit numbers of base 10
+ *              starting from 0, followed by a new line.
  *
  * Return: Always 0 (Success)
  */
 int main(void)
 {
-    int digit;
+	int digit;
 
-    for (digit = 0; digit <= 9; digit++)
-    {
-        putchar(digit + '0');
+	for (digit = 0; digit <= 9; digit++)
+	{
+		putchar(digit + '0');
 
-        if (digit < 9)
-        {
-            putchar(',');
-            putchar(' ');
-        }
-    }
+		if (digit < 9)
+		{
+			putchar(',');
+			putchar(' ');
+		}
+	}
 
-    putchar('\n');
+	putchar('\n');
 
-    return (0);
+	return (0);
 }
