@@ -2,21 +2,15 @@
 #include <stdlib.h>
 #include <time.h>
 
-/**
- * main - Entry point
- *
- * This program generates a random number and prints its last digit.
- *
- * Return: Always 0 (Success)
- */
 int main(void)
 {
     int n;
+    int last_digit;
 
     srand(time(0));
     n = rand() - RAND_MAX / 2;
 
-    int last_digit = n % 10; // Calculate the last digit of n
+    last_digit = n % 10; // Calculate the last digit of n
 
     printf("Last digit of %d is %d and is ", n, last_digit);
 
