@@ -5,7 +5,7 @@
 /**
  * main - Entry point
  *
- * This program generates a random number and checks.
+ * This program generates a random number and checks if it's positive, negative, or zero.
  *  
  * Return: Always 0 (Success)
  */
