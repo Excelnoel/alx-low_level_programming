@@ -1,32 +1,20 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _putchar - Writes a character to stdout
- * @c: The character to write
+ * print_alphabet - Entry point
+ * Return:0
  */
-int _putchar(char c)
-{
-    return write(1, &c, 1);
-}
 
-/**
- * Prints the alphabet in lowercase followed by a new line
- */
 void print_alphabet(void)
 {
-    char letter = 'a';
+	char c = 'a';
 
-    while (letter <= 'z')
-    {
-        _putchar(letter);
-        letter++;
-    }
+	while (c <= 'z')
+	{
+		_putchar(c);
+		c++;
 
-    _putchar('\n');
-}
+	}
+	_putchar('\n');
 
-int main(void)
-{
-    print_alphabet();
-    return (0);
 }
