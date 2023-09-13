@@ -1,5 +1,5 @@
 #include "main.h"
-#include <unistd.h> // Include the necessary header for 'write'
+#include <unistd.h> /* Include the necessary header for 'write'*/
 
 /**
  * _putchar - Writes a character to the standard output
