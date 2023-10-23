@@ -9,7 +9,7 @@
 
  void free_listint2(listint_t **head)
 {
-	listint_t *tmp_node;
+	listint_t *tmp_node; /* create a temporary node */
 	if (head == NULL)
 		return;
 
