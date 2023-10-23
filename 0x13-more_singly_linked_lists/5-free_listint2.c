@@ -17,6 +17,6 @@
 	{
 		tmp_node = (*head)->next;
 		free(*head);
-		(*head) = tmp_node
+		(*head) = tmp_node;
 	}
 }
