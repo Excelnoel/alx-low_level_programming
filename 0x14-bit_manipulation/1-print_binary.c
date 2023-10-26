@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * one-print_binary: prints the binary representation of a number
+ * print_binary - prints the binary representation of a number
  * @n: parameter
  */
 void print_binary(unsigned long int n)
@@ -27,4 +27,3 @@ void print_binary(unsigned long int n)
 			putchar('0');
 	}
 }
-
