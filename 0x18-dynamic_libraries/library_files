@@ -1,0 +1,261 @@
+/* _islower.c */
+#include "main.h"
+
+int _islower(int c) {
+    return (c >= 'a' && c <= 'z');
+}
+
+/* _isalpha.c */
+#include "main.h"
+
+int _isalpha(int c) {
+    return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+}
+
+/* _abs.c */
+#include "main.h"
+
+int _abs(int n) {
+    return (n < 0) ? -n : n;
+}
+
+/* _isupper.c */
+#include "main.h"
+
+int _isupper(int c) {
+    return (c >= 'A' && c <= 'Z');
+}
+
+/* _isdigit.c */
+#include "main.h"
+
+int _isdigit(int c) {
+    return (c >= '0' && c <= '9');
+}
+
+/* _strlen.c */
+#include "main.h"
+
+int _strlen(char *s) {
+    int count = 0;
+    while (*s != '\0') {
+        count++;
+        s++;
+    }
+    return count;
+}
+
+/* _puts.c */
+#include "main.h"
+#include <unistd.h>
+
+void _puts(char *s) {
+    while (*s != '\0') {
+        _putchar(*s);
+        s++;
+    }
+    _putchar('\n');
+}
+
+/* _strcpy.c */
+#include "main.h"
+
+char *_strcpy(char *dest, char *src) {
+    char *start = dest;
+    while (*src != '\0') {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+    *dest = '\0';
+    return start;
+}
+
+/* _atoi.c */
+#include "main.h"
+
+int _atoi(char *s) {
+    int result = 0;
+    int sign = 1;
+
+    while (*s == ' ' || (*s >= 9 && *s <= 13))
+        s++;
+
+    if (*s == '-' || *s == '+') {
+        sign = (*s == '-') ? -1 : 1;
+        s++;
+    }
+
+    while (*s >= '0' && *s <= '9') {
+        result = result * 10 + (*s - '0');
+        s++;
+    }
+
+    return sign * result;
+}
+
+/* _strcat.c */
+#include "main.h"
+
+char *_strcat(char *dest, char *src) {
+    char *start = dest;
+
+    while (*dest != '\0')
+        dest++;
+
+    while (*src != '\0') {
+        *dest = *src;
+        dest++;
+        src++;
+    }
+
+    *dest = '\0';
+
+    return start;
+}
+
+/* _strncat.c */
+#include "main.h"
+
+char *_strncat(char *dest, char *src, int n) {
+    char *start = dest;
+
+    while (*dest != '\0')
+        dest++;
+
+    while (*src != '\0' && n > 0) {
+        *dest = *src;
+        dest++;
+        src++;
+        n--;
+    }
+
+    *dest = '\0';
+
+    return start;
+}
+
+/* _strncpy.c */
+#include "main.h"
+
+char *_strncpy(char *dest, char *src, int n) {
+    char *start = dest;
+
+    while (*src != '\0' && n > 0) {
+        *dest = *src;
+        dest++;
+        src++;
+        n--;
+    }
+
+    while (n > 0) {
+        *dest = '\0';
+        dest++;
+        n--;
+    }
+
+    return start;
+}
+
+/* _strcmp.c */
+#include "main.h"
+
+int _strcmp(char *s1, char *s2) {
+    while (*s1 != '\0' && *s2 != '\0') {
+        if (*s1 != *s2)
+            return (*s1 - *s2);
+        s1++;
+        s2++;
+    }
+
+    return 0;
+}
+
+/* _memset.c */
+#include "main.h"
+
+char *_memset(char *s, char b, unsigned int n) {
+    while (n > 0) {
+        *s = b;
+        s++;
+        n--;
+    }
+
+    return s;
+}
+
+/* _memcpy.c */
+#include "main.h"
+
+char *_memcpy(char *dest, char *src, unsigned int n) {
+    char *start = dest;
+
+    while (n > 0) {
+        *dest = *src;
+        dest++;
+        src++;
+        n--;
+    }
+
+    return start;
+}
+
+/* _strchr.c */
+#include "main.h"
+
+char *_strchr(char *s, char c) {
+    while (*s != '\0') {
+        if (*s == c)
+            return s;
+        s++;
+    }
+
+    return NULL;
+}
+
+/* _strspn.c */
+#include "main.h"
+
+unsigned int _strspn(char *s, char *accept) {
+    unsigned int count = 0;
+    while (*s != '\0' && *_strchr(accept, *s) != NULL) {
+        count++;
+        s++;
+    }
+    return count;
+}
+
+/* _strpbrk.c */
+#include "main.h"
+
+char *_strpbrk(char *s, char *accept) {
+    while (*s != '\0') {
+        if (_strchr(accept, *s) != NULL)
+            return s;
+        s++;
+    }
+    return NULL;
+}
+
+/* _strstr.c */
+#include "main.h"
+
+char *_strstr(char *haystack, char *needle) {
+    while (*haystack != '\0') {
+        char *start = haystack;
+        char *pattern = needle;
+
+        while (*haystack != '\0' && *pattern != '\0' && *haystack == *pattern) {
+            haystack++;
+            pattern++;
+        }
+
+        if (*pattern == '\0')
+            return start;
+
+        haystack = start + 1;
+    }
+
+    return NULL;
+}
+
