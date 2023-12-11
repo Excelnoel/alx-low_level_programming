@@ -1,5 +1,5 @@
 #include "main.h"
-#include <stddeff.h>
+#include <stddef.h>
 unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int count = 0;
